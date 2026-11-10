@@ -86,7 +86,7 @@
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white bg-mesh">
 
   <!-- NAVIGATION HEADER -->
-  <header class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between border-b border-slate-800/60">
+  <header class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between border-b border-slate-800/60 sticky top-0 bg-slate-950/80 backdrop-blur-md z-50">
     <div class="flex items-center gap-2.5">
       <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-black shadow-lg shadow-blue-500/30">
         R
@@ -96,9 +96,13 @@
         <span class="text-[10px] text-slate-400 font-medium">Digital Solution Provider</span>
       </div>
     </div>
-    <a href="#pricing" class="hidden sm:inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition-all">
-      ⚡ Ambil Lisensi
-    </a>
+    <div class="flex items-center gap-4 text-xs font-semibold">
+      <a href="#cara-kerja" class="hidden md:inline-block text-slate-300 hover:text-blue-400 transition">Cara Kerja</a>
+      <a href="#kalkulator" class="hidden md:inline-block text-slate-300 hover:text-blue-400 transition">Kalkulator</a>
+      <a href="#pricing" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md shadow-blue-600/20">
+        ⚡ Ambil Lisensi
+      </a>
+    </div>
   </header>
 
   <!-- HERO SECTION -->
@@ -123,9 +127,8 @@
     <div class="my-10 max-w-sm mx-auto relative group perspective-container">
       <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
       
-      <!-- 3D Interactive Card Wrapper (Background Transparan Tanpa Kotak Hitam Padat) -->
+      <!-- 3D Interactive Card Wrapper -->
       <div id="card3d" class="card-3d relative bg-transparent rounded-2xl overflow-hidden aspect-[1.58/1] flex items-center justify-center p-2">
-        <!-- Product Image Layer -->
         <img src="mockup-card.png" alt="Mockup Kartu Google Review NFC" class="w-full h-full object-contain object-center drop-shadow-2xl">
       </div>
     </div>
@@ -176,7 +179,7 @@
             💰
           </div>
           <h3 class="font-extrabold text-white text-lg mb-2">Margin Keuntungan Tinggi</h3>
-          <p class="text-slate-400 text-xs leading-relaxed">Modal cetak dari supplier hanya <strong>Rp15.000/pcs</strong>. Kamu bisa menjualnya seharga <strong>Rp75.000 – Rp150.000/pcs</strong> ke pemilik tempat usaha!</p>
+          <p class="text-slate-400 text-xs leading-relaxed">Modal cetak dari supplier hanya <strong>Rp15.000/pcs</strong>. Kamu bisa menjualnya seharga <strong>Rp50.000 – Rp165.000/pcs</strong> ke pemilik tempat usaha!</p>
         </div>
 
         <div class="glass-panel p-6 rounded-3xl hover:border-emerald-500/40 transition-all duration-300">
@@ -190,26 +193,26 @@
     </div>
   </section>
 
-  <!-- 3 STEP BUSINESS WORKFLOW (CARA KERJA) -->
+  <!-- 3 STEP BUSINESS WORKFLOW (ACCORDING TO REFERENSI: #cara-kerja) -->
   <section id="cara-kerja" class="py-16 px-4 max-w-5xl mx-auto text-center">
     <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Alur Kerja Praktis</span>
     <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-12">3 Langkah Mudah Memulai Bisnis</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-blue-500/40 transition-all">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-black flex items-center justify-center text-sm mb-4 shadow-lg shadow-blue-600/30">1</span>
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-blue-500/40 transition duration-300">
+        <span class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm mb-4 shadow-lg shadow-blue-500/30">1</span>
         <h3 class="font-bold text-white text-base mb-2">Pelajari E-Book & Akses Kontak</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Download panduan instan setelah pembayaran dan dapatkan daftar kontak WhatsApp supplier utama.</p>
+        <p class="text-xs text-slate-400 leading-relaxed">Download panduan instan setelah pembayaran dan dapatkan daftar kontak WhatsApp supplier tangan pertama.</p>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-blue-500/40 transition-all">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-black flex items-center justify-center text-sm mb-4 shadow-lg shadow-blue-600/30">2</span>
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-blue-500/40 transition duration-300">
+        <span class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm mb-4 shadow-lg shadow-blue-500/30">2</span>
         <h3 class="font-bold text-white text-base mb-2">Tawarkan ke Usaha Lokal</h3>
         <p class="text-xs text-slate-400 leading-relaxed">Gunakan skrip komunikasi door-to-door atau via WA yang sudah kami siapkan untuk negosiasi sampai deal.</p>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-emerald-500/40 transition-all">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white font-black flex items-center justify-center text-sm mb-4 shadow-lg shadow-emerald-500/30">3</span>
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left hover:border-emerald-500/40 transition duration-300">
+        <span class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm mb-4 shadow-lg shadow-emerald-500/30">3</span>
         <h3 class="font-bold text-white text-base mb-2">Order ke Supplier & Terima Margin</h3>
         <p class="text-xs text-slate-400 leading-relaxed">Kirim logo client ke supplier, supplier mencetak & mengirimkan kartu. Kamu mengantongi keuntungan bersih!</p>
       </div>
@@ -217,7 +220,7 @@
   </section>
 
   <!-- INTERACTIVE PROFIT CALCULATOR SECTION -->
-  <section class="py-12 px-4 max-w-4xl mx-auto">
+  <section id="kalkulator" class="py-12 px-4 max-w-4xl mx-auto">
     <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-blue-500/30 shadow-2xl relative overflow-hidden">
       <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
 

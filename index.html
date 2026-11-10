@@ -105,10 +105,10 @@
     <div class="my-10 max-w-sm mx-auto relative group">
       <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
       
-      <!-- Mockup Display Card / Upload: mockup-card.jpg -->
+      <!-- Mockup Display Card / Upload: mockup-card.png -->
       <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/80 rounded-2xl p-6 shadow-2xl nfc-card-glow text-left flex flex-col justify-between h-56 transform transition hover:-translate-y-1 overflow-hidden">
-        < Optional Product Image Layer (Uncomment when image is uploaded as mockup-card.png)>
-        <img src="mockup-card.png" alt="Mockup Kartu Google Review NFC" class="absolute inset-0 w-full h-full object-cover opacity-90">
+        <!-- Optional Product Image Layer -->
+        <img src="mockup-card.png" alt="Mockup Kartu Google Review NFC" class="absolute inset-0 w-full h-full object-contain opacity-95">
 
         <div class="flex justify-between items-start relative z-10">
           <div class="flex items-center gap-2">
@@ -359,9 +359,9 @@
         <!-- TIER 1: AKSES SUPPLIER -->
         <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-700 transition">
           <div>
-            <!-- Product Image / Upload: supplier-pack.jpg -->
+            <!-- Product Image / Upload: supplier-pack.png -->
             <div class="w-full h-40 bg-slate-900 rounded-2xl mb-4 overflow-hidden border border-slate-800 flex items-center justify-center">
-              <img src="supplier-pack.png" alt="Akses Supplier Eksklusif" class="w-full h-full object-cover">
+              <img src="supplier-pack.png" alt="Akses Supplier Eksklusif" class="w-full h-full object-contain">
             </div>
 
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Starter Pack</span>
@@ -408,9 +408,9 @@
           </div>
 
           <div>
-            <!-- Product Image / Upload: bundling-pack.jpg -->
+            <!-- Product Image / Upload: bundling-pack.png -->
             <div class="w-full h-40 bg-slate-900 rounded-2xl mb-4 overflow-hidden border border-blue-500/40 flex items-center justify-center">
-              <img src="bundling-pack.png" alt="E-Book Panduan A-Z + Supplier" class="w-full h-full object-cover">
+              <img src="bundling-pack.png" alt="E-Book Panduan A-Z + Supplier" class="w-full h-full object-contain">
             </div>
 
             <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Paket Lengkap Siap Cuan</span>
@@ -546,6 +546,7 @@
     }
 
     // 2. Safe FAQ Toggle Logic
+    // Safe FAQ Toggle Logic
     function toggleFaq(num) {
       const targetNum = parseInt(num, 10);
       if (isNaN(targetNum)) return;

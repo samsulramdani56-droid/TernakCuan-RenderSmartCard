@@ -6,170 +6,389 @@
   <title>Panduan Bisnis & Akses Supplier Kartu Google Review - Render Smart Card</title>
   <meta name="description" content="Bongkar rahasia bisnis kartu Google Review NFC & QR Code. Akses supplier tangan pertama mulai Rp15.000/pcs tanpa minimum order beserta panduan A-Z sampai deal.">
   
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Rahasia Bisnis Kartu Google Review NFC - Margin 400%">
+  <meta property="og:description" content="Dapatkan kontak supplier tangan pertama Rp15.000/pcs + panduan pitching ke UMKM lokal.">
+  <meta property="og:type" content="website">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    @keyframes pulseSlow {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.03); opacity: 0.95; }
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
     }
-    .animate-pulse-slow { animation: pulseSlow 3s infinite ease-in-out; }
+    
+    /* Subtle Background Radial Mesh */
+    .bg-mesh {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%);
+    }
+
+    /* Glossy Card Shimmer Effect */
+    .nfc-card-glow {
+      box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.4);
+    }
+    
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Accordion Transition */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+    .faq-answer.open {
+      max-height: 200px;
+      opacity: 1;
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white pb-24 md:pb-0 bg-mesh">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 text-white py-2.5 px-4 text-center text-xs sm:text-sm font-bold tracking-wide shadow-md sticky top-0 z-40">
-    🔥 PROMO HARI INI: DISKON HINGGA 70% + AKSES SUPPLIER TANGAN PERTAMA!
+  <!-- TOP ANNOUNCEMENT BAR WITH TIMER -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 text-white py-2 px-4 text-center text-xs sm:text-sm font-semibold tracking-wide shadow-lg sticky top-0 z-50 flex items-center justify-center gap-2">
+    <span>🔥 PROMO SPESIAL: Diskon 70% + Akses Supplier Tangan Pertama berakhir dalam</span>
+    <span id="top-timer" class="font-mono font-bold bg-black/30 px-2 py-0.5 rounded text-amber-300">14:59</span>
   </div>
 
+  <!-- NAVIGATION HEADER -->
+  <header class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between border-b border-slate-800/60">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-black shadow-lg shadow-blue-500/30">
+        R
+      </div>
+      <div>
+        <span class="font-extrabold text-base tracking-tight text-white block leading-none">Render Smart Card</span>
+        <span class="text-[10px] text-slate-400 font-medium">Digital Solution Provider</span>
+      </div>
+    </div>
+    <a href="#pricing" class="hidden sm:inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition-all">
+      ⚡ Ambil Lisensi
+    </a>
+  </header>
+
   <!-- HERO SECTION -->
-  <section class="relative pt-8 pb-16 px-4 max-w-5xl mx-auto text-center">
+  <section class="relative pt-10 pb-16 px-4 max-w-6xl mx-auto text-center">
     <!-- Badge Status -->
-    <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-3.5 py-1.5 rounded-full text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
-      <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+    <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-4 py-1.5 rounded-full text-blue-400 text-xs font-bold tracking-wider mb-6">
+      <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
       Peluang Bisnis Digital UMKM 2026
     </div>
 
     <!-- Main Headline -->
-    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
       Bongkar Rahasia Bisnis <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">Kartu Google Review</span> Dari Nol Sampai Profit Jutaan!
     </h1>
 
     <!-- Subheadline -->
     <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-      Dapatkan akses supplier fisik NFC termurah <strong class="text-white">(Mulai Rp15.000/pcs tanpa minimum order)</strong> plus panduan strategi A-Z jualan langsung ke ribuan pemilik usaha & kafe lokal.
+      Dapatkan akses supplier fisik NFC termurah <strong class="text-white font-semibold">(Mulai Rp15.000/pcs tanpa minimal order)</strong> plus panduan strategi A-Z jualan ke ribuan pemilik resto & kafe lokal.
     </p>
+
+    <!-- Visual Card Preview Mockup -->
+    <div class="my-10 max-w-sm mx-auto relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+      
+      <!-- Mockup Display Card -->
+      <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/80 rounded-2xl p-6 shadow-2xl nfc-card-glow text-left flex flex-col justify-between h-56 transform transition hover:-translate-y-1">
+        <div class="flex justify-between items-start">
+          <div class="flex items-center gap-2">
+            <!-- Google Colors Circles -->
+            <div class="flex -space-x-1">
+              <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            </div>
+            <span class="text-[11px] font-bold text-slate-300 tracking-wider">TAP FOR REVIEW</span>
+          </div>
+          <!-- NFC Wave Icon -->
+          <svg class="w-6 h-6 text-blue-400 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+
+        <div class="my-auto text-center py-2">
+          <div class="inline-flex items-center gap-1 bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-full text-amber-300 text-xs font-bold mb-2">
+            <span>★ ★ ★ ★ ★</span>
+            <span class="text-[10px] text-white">5.0</span>
+          </div>
+          <p class="text-xs font-extrabold text-white tracking-wide">Bantu Kami Memberikan Ulasan</p>
+          <p class="text-[10px] text-slate-400 mt-0.5">Tempelkan HP di sini / Scan QR Code</p>
+        </div>
+
+        <div class="flex justify-between items-end text-[10px] text-slate-500 border-t border-slate-800 pt-3">
+          <span>Render Smart Card Pro</span>
+          <span class="font-mono text-blue-400">NFC + QR Enabled</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Call To Action Button -->
     <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
-      <a href="#pricing" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold px-8 py-4 rounded-2xl text-base shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 animate-pulse-slow">
-        👉 Ambil Promo & Akses Sekarang
+      <a href="#pricing" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold px-8 py-4 rounded-2xl text-base shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+        <span>👉 Ambil Promo & Akses Sekarang</span>
       </a>
     </div>
 
     <!-- Proof Badges -->
     <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-medium">
-      <span class="flex items-center gap-1.5">⚡ Akses File Instan</span>
-      <span class="flex items-center gap-1.5">📦 Tanpa Minimum Order</span>
-      <span class="flex items-center gap-1.5">🤝 Komunitas & Support</span>
+      <span class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        Akses Instant File
+      </span>
+      <span class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        Tanpa Minimum Order
+      </span>
+      <span class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        Komunitas & Support
+      </span>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PROFIT CALCULATOR SECTION -->
+  <section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-blue-500/30 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="text-center mb-8">
+        <span class="text-blue-400 font-bold text-xs uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Kalkulator Potensi Profit</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Berapa Potensi Penghasilanmu?</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Geser slider di bawah untuk melihat estimasi margin keuntungan bersih bulanan.</p>
+      </div>
+
+      <!-- Slider Control -->
+      <div class="max-w-xl mx-auto space-y-6">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label for="card-range" class="text-xs font-semibold text-slate-300">Target Kartu Terjual / Bulan:</label>
+            <span id="card-count-label" class="text-lg font-black text-blue-400 bg-slate-900 px-3 py-1 rounded-xl border border-slate-700">30 Pcs</span>
+          </div>
+          <input type="range" id="card-range" min="5" max="200" step="5" value="30" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500">
+        </div>
+
+        <!-- Profit Display Breakdown -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+          <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800 text-center">
+            <span class="text-[10px] text-slate-400 font-medium block">Modal Supplier (Rp15k)</span>
+            <span id="modal-val" class="text-sm font-bold text-slate-300 mt-1 block">Rp 450.000</span>
+          </div>
+          <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800 text-center">
+            <span class="text-[10px] text-slate-400 font-medium block">Omset (Jual Rp85k/pcs)</span>
+            <span id="omset-val" class="text-sm font-bold text-slate-300 mt-1 block">Rp 2.550.000</span>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-950/60 to-slate-900 p-4 rounded-2xl border border-emerald-500/40 text-center">
+            <span class="text-[10px] text-emerald-400 font-bold block">Profit Bersih Kamu</span>
+            <span id="profit-val" class="text-xl font-black text-emerald-400 mt-0.5 block">Rp 2.100.000</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- PROBLEM & OPPORTUNITY SECTION -->
-  <section class="py-12 px-4 bg-slate-900/60 border-y border-slate-800">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Kenapa Bisnis Kartu NFC Sangat Gurih?</h2>
-        <p class="text-slate-400 text-xs sm:text-sm">Setiap toko fisik dan kafe di sekitarmu membutuhkan ulasan Google Maps bintang 5!</p>
+  <section class="py-14 px-4 bg-slate-900/50 border-y border-slate-800/80">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3">Kenapa Bisnis Kartu NFC Sangat Gurih?</h2>
+        <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">Setiap bisnis fisik, cafe, dan klinik di sekitarmu berlomba-lomba mengejar ulasan Google Maps bintang 5!</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-          <div class="text-3xl mb-3">🏬</div>
-          <h3 class="font-bold text-white text-base mb-2">Pasar Sangat Luas</h3>
-          <p class="text-slate-400 text-xs leading-relaxed">Jutaan UMKM, restoran, barbershop, dan klinik butuh ulasan bagus agar muncul di urutan atas Google Maps.</p>
+        <div class="glass-panel p-6 rounded-3xl hover:border-blue-500/40 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-4 font-bold">
+            🏬
+          </div>
+          <h3 class="font-extrabold text-white text-lg mb-2">Pasar Sangat Luas</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">Jutaan UMKM, resto, barbershop, salon, dan klinik kesehatan sangat membutuhkan ulasan Google Maps agar usaha mereka selalu tampil nomor 1.</p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-          <div class="text-3xl mb-3">💰</div>
-          <h3 class="font-bold text-white text-base mb-2">Margin Keuntungan Tinggi</h3>
-          <p class="text-slate-400 text-xs leading-relaxed">Modal cetak hanya Rp15.000/pcs dari supplier, kamu bisa pasarkan ke pemilik usaha seharga Rp75.000–Rp150.000!</p>
+        <div class="glass-panel p-6 rounded-3xl hover:border-indigo-500/40 transition-all duration-300">
+          <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-4 font-bold">
+            💰
+          </div>
+          <h3 class="font-extrabold text-white text-lg mb-2">Margin Keuntungan Tinggi</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">Modal cetak dari supplier hanya <strong>Rp15.000/pcs</strong>. Kamu bisa menjualnya seharga <strong>Rp75.000 – Rp150.000/pcs</strong> ke pemilik tempat usaha!</p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-          <div class="text-3xl mb-3">🚀</div>
-          <h3 class="font-bold text-white text-base mb-2">Tanpa Stok Banyak</h3>
-          <p class="text-slate-400 text-xs leading-relaxed">Tidak perlu stok barang ribuan pcs. Kamu bisa pesan satuan ke supplier sesuai jumlah orderan dari client-mu.</p>
+        <div class="glass-panel p-6 rounded-3xl hover:border-emerald-500/40 transition-all duration-300">
+          <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-4 font-bold">
+            🚀
+          </div>
+          <h3 class="font-extrabold text-white text-lg mb-2">Tanpa Stok Ribuan Pcs</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">Tidak perlu modal besar untuk menimbun barang. Kamu bisa memesan secara eceran/satuan ke supplier sesuai jumlah orderan pembeli.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 STEP BUSINESS WORKFLOW -->
+  <section class="py-16 px-4 max-w-5xl mx-auto text-center">
+    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Alur Kerja Praktis</span>
+    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-12">3 Langkah Mudah Memulai Bisnis</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left">
+        <span class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm mb-4">1</span>
+        <h3 class="font-bold text-white text-base mb-2">Pelajari E-Book & Akses Kontak</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Download panduan instan setelah pembayaran dan dapatkan daftar kontak WhatsApp supplier utama.</p>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left">
+        <span class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm mb-4">2</span>
+        <h3 class="font-bold text-white text-base mb-2">Tawarkan ke Usaha Lokal</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Gunakan skrip komunikasi door-to-door atau via WA yang sudah kami siapkan untuk negosiasi sampai deal.</p>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl relative text-left">
+        <span class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm mb-4">3</span>
+        <h3 class="font-bold text-white text-base mb-2">Order ke Supplier & Terima Margin</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Kirim logo client ke supplier, supplier mencetak & mengirimkan kartu. Kamu mengantongi keuntungan bersih!</p>
       </div>
     </div>
   </section>
 
   <!-- WHAT'S INSIDE THE PACKAGE -->
-  <section class="py-16 px-4 max-w-4xl mx-auto">
+  <section class="py-16 px-4 max-w-5xl mx-auto border-t border-slate-900">
     <div class="text-center mb-12">
       <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3">Materi & Fasilitas Yang Kamu Dapatkan</h2>
-      <p class="text-slate-400 text-xs sm:text-sm">Panduan langkah demi langkah dirancang praktis untuk pemula sekalipun.</p>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto">Semua dirancang secara praktis dan teruji agar pemula bisa langsung eksekusi tanpa bingung.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-start gap-3">
-        <div class="bg-blue-600/20 text-blue-400 p-2.5 rounded-xl font-bold text-sm">01</div>
+      <div class="bg-slate-900/70 border border-slate-800/80 p-5 rounded-2xl flex items-start gap-4 hover:border-slate-700 transition">
+        <div class="bg-blue-600/20 text-blue-400 p-3 rounded-xl font-extrabold text-sm shrink-0">01</div>
         <div>
-          <h4 class="font-bold text-white text-sm mb-1">Akses Supplier Tangan Pertama</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Kontak pabrik/supplier terpercaya dengan harga Rp15.000/pcs tanpa minimum order.</p>
+          <h4 class="font-bold text-white text-base mb-1">Akses Supplier Tangan Pertama</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">Kontak pabrik & supplier cetak terpercaya dengan harga mulai Rp15.000/pcs tanpa minimum pembelian.</p>
         </div>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-start gap-3">
-        <div class="bg-blue-600/20 text-blue-400 p-2.5 rounded-xl font-bold text-sm">02</div>
+      <div class="bg-slate-900/70 border border-slate-800/80 p-5 rounded-2xl flex items-start gap-4 hover:border-slate-700 transition">
+        <div class="bg-blue-600/20 text-blue-400 p-3 rounded-xl font-extrabold text-sm shrink-0">02</div>
         <div>
-          <h4 class="font-bold text-white text-sm mb-1">Panduan Aktivasi & Sistem Web</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Cara menghubungkan kartu NFC/QR ke sistem web profil bisnis & Google Maps instan.</p>
+          <h4 class="font-bold text-white text-base mb-1">Panduan Setup & Sistem Web Profil</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">Langkah mudah mengonfigurasi chip NFC & QR Code agar langsung mengarah ke halaman ulasan Google Maps client.</p>
         </div>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-start gap-3">
-        <div class="bg-blue-600/20 text-blue-400 p-2.5 rounded-xl font-bold text-sm">03</div>
+      <div class="bg-slate-900/70 border border-slate-800/80 p-5 rounded-2xl flex items-start gap-4 hover:border-slate-700 transition">
+        <div class="bg-blue-600/20 text-blue-400 p-3 rounded-xl font-extrabold text-sm shrink-0">03</div>
         <div>
-          <h4 class="font-bold text-white text-sm mb-1">Cara Cari Client (Canvassing & Online)</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Strategi mendatangi toko lokal (door-to-door) dan penawaran via WhatsApp tanpa canggung.</p>
+          <h4 class="font-bold text-white text-base mb-1">Strategi Canvassing & Prospecting</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">Teknik mendatangi tempat usaha lokal (door-to-door) dan metode follow-up WhatsApp yang berkonversi tinggi.</p>
         </div>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-start gap-3">
-        <div class="bg-blue-600/20 text-blue-400 p-2.5 rounded-xl font-bold text-sm">04</div>
+      <div class="bg-slate-900/70 border border-slate-800/80 p-5 rounded-2xl flex items-start gap-4 hover:border-slate-700 transition">
+        <div class="bg-blue-600/20 text-blue-400 p-3 rounded-xl font-extrabold text-sm shrink-0">04</div>
         <div>
-          <h4 class="font-bold text-white text-sm mb-1">Cara Handle Objection Sampai Deal</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Skrip komunikasi praktis menghadapi keberatan harga atau pemilik toko yang belum paham.</p>
+          <h4 class="font-bold text-white text-base mb-1">Skrip Komunikasi Closing & Handling Objection</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">Jawaban siap pakai untuk mengatasi penolakan harga atau keraguan pemilik toko yang belum paham teknologi NFC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF & REVIEWS -->
+  <section class="py-16 px-4 max-w-5xl mx-auto border-t border-slate-900">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Testimoni Member</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Apa Kata Mereka Yang Sudah Mencoba?</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">★★★★★</div>
+        <p class="text-slate-300 text-xs leading-relaxed mb-4">"Awalnya ragu apa beneran suppliernya bisa order eceran 1 pcs. Pas dicoba ternyata beneran responsif dan harga per pcs cuma Rp15rb. Minggu pertama keliling kafe dekat rumah laku 8 kartu!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-blue-600 font-bold text-xs flex items-center justify-center text-white">R</div>
+          <div>
+            <h5 class="text-xs font-bold text-white">Reza A.</h5>
+            <span class="text-[10px] text-slate-500">Freelancer - Bandung</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">★★★★★</div>
+        <p class="text-slate-300 text-xs leading-relaxed mb-4">"Panduan pitching door-to-door di e-booknya sangat membantu. Jadi tahu cara jawab kalau owner kafe nanya keunggulannya dibanding QR biasa."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-indigo-600 font-bold text-xs flex items-center justify-center text-white">D</div>
+          <div>
+            <h5 class="text-xs font-bold text-white">Dimas P.</h5>
+            <span class="text-[10px] text-slate-500">Digital Marketer - Surabaya</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRICING SECTION -->
-  <section id="pricing" class="py-16 px-4 bg-slate-900/80 border-t border-slate-800">
+  <section id="pricing" class="py-20 px-4 bg-slate-900/80 border-t border-slate-800 relative">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Pilih Paket Penawaran Terbaik</h2>
-        <p class="text-slate-400 text-xs sm:text-sm">Mulai perjalanan bisnismu hari ini dengan investasi terjangkau.</p>
+        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Penawaran Spesial</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 mb-3">Pilih Paket Investasi Terbaik</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Mulai langkah bisnismu hari ini sebelum harga promo kembali normal.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
         
         <!-- TIER 1: AKSES SUPPLIER -->
-        <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+        <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-700 transition">
           <div>
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pilihan Starter</span>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Starter Pack</span>
             <h3 class="text-xl font-extrabold text-white mt-1 mb-3">Akses Supplier Eksklusif</h3>
             <div class="mb-6">
               <span class="text-slate-500 line-through text-sm">Rp 49.000</span>
               <div class="text-3xl font-extrabold text-white mt-0.5">Rp 15.000</div>
             </div>
             
-            <ul class="space-y-3 text-xs text-slate-300 mb-8 border-t border-slate-800 pt-6">
-              <li class="flex items-center gap-2">✓ Akses Kontak Supplier Tangan Pertama</li>
-              <li class="flex items-center gap-2">✓ Harga Kartu Mulai Rp15.000/pcs</li>
-              <li class="flex items-center gap-2">✓ Bebas Order Satuan (Tanpa Minimal Order)</li>
-              <li class="flex items-center gap-2 text-slate-500">✕ Panduan Strategi Bisnis A-Z</li>
-              <li class="flex items-center gap-2 text-slate-500">✕ Script Komunikasi Pitching Client</li>
+            <ul class="space-y-3.5 text-xs text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Kontak Supplier Tangan Pertama
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Harga Kartu Rp15.000/pcs
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Bebas Order Eceran (Tanpa Minimal Order)
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-500 line-through">
+                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                E-Book Strategi Bisnis A-Z
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-500 line-through">
+                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                Skrip Pitching Client & Objection Handling
+              </li>
             </ul>
           </div>
 
-          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 px-4 rounded-2xl text-center text-sm transition-all">
+          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3.5 px-4 rounded-xl text-center text-xs transition-all">
             Pilih Akses Supplier
           </a>
         </div>
 
         <!-- TIER 2: BUNDLING COMPLETE (RECOMMENDED) -->
-        <div class="bg-gradient-to-b from-blue-950/40 to-slate-950 border-2 border-blue-500 rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative shadow-2xl shadow-blue-900/20">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-extrabold uppercase px-4 py-1 rounded-full tracking-wider shadow-md">
-            🔥 Paling Populer (Best Value)
+        <div class="bg-gradient-to-b from-blue-950/60 to-slate-950 border-2 border-blue-500 rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative shadow-2xl shadow-blue-900/30">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[10px] font-extrabold uppercase px-4 py-1 rounded-full tracking-wider shadow-lg flex items-center gap-1">
+            🔥 Paling Laris (Best Value)
           </div>
 
           <div>
@@ -180,18 +399,37 @@
               <div class="text-4xl font-extrabold text-emerald-400 mt-0.5">Rp 89.000</div>
             </div>
             
-            <ul class="space-y-3 text-xs text-slate-200 mb-8 border-t border-slate-800 pt-6">
-              <li class="flex items-center gap-2 font-semibold"><span class="text-emerald-400">✓</span> E-Book Lengkap Panduan Bisnis A-Z</li>
-              <li class="flex items-center gap-2 font-semibold"><span class="text-emerald-400">✓</span> Akses Kontak Supplier Tangan Pertama</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Harga Kartu Rp15.000 (Tanpa Min. Order)</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Panduan Aktivasi & Setup Web Profil</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Script Komunikasi Pitching Client & Door-to-Door</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Strategi Scale Up & Re-Order Usaha</li>
+            <ul class="space-y-3.5 text-xs text-slate-200 mb-8 border-t border-slate-800/80 pt-6">
+              <li class="flex items-center gap-2.5 font-semibold">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                E-Book Lengkap Panduan Bisnis A-Z
+              </li>
+              <li class="flex items-center gap-2.5 font-semibold">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Akses Kontak Supplier Tangan Pertama
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Harga Kartu Rp15.000 (Tanpa Min. Order)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Panduan Aktivasi & Setup Web Profil
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Script Komunikasi Pitching Client & Door-to-Door
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Strategi Scale Up & Re-Order Usaha
+              </li>
             </ul>
           </div>
 
-          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold py-4 px-4 rounded-2xl text-center text-sm shadow-lg shadow-blue-600/30 transition-all">
-            Dapatkan Paket Lengkap
+          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-4 px-4 rounded-xl text-center text-sm shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            <span>Dapatkan Paket Lengkap</span>
+            <span>➔</span>
           </a>
         </div>
 
@@ -199,61 +437,131 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
+  <!-- FAQ SECTION ACCORDION -->
   <section class="py-16 px-4 max-w-3xl mx-auto">
     <div class="text-center mb-10">
       <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Pertanyaan Sering Diajukan (FAQ)</h2>
-      <p class="text-slate-400 text-xs">Jawaban singkat seputar akses digital Render Smart Card.</p>
+      <p class="text-slate-400 text-xs">Jawaban lengkap seputar akses digital Render Smart Card.</p>
     </div>
 
-    <div class="space-y-4">
-      <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 group">
-        <summary class="font-bold text-sm text-white cursor-pointer list-none flex justify-between items-center">
+    <div class="space-y-3">
+      <!-- Item 1 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button onclick="toggleFaq(1)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
           <span>Bagaimana cara saya menerima materi setelah pembayaran?</span>
-          <span class="text-blue-400 transition-transform group-open:rotate-180">▼</span>
-        </summary>
-        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-          Pembayaran diproses otomatis melalui Lynk.id. Setelah checkout selesai, kamu akan langsung mendapatkan link unduhan E-Book dan file kontak supplier secara instan.
-        </p>
-      </details>
+          <span id="faq-icon-1" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-1" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Pembayaran diproses otomatis melalui sistem Lynk.id. Setelah checkout selesai, kamu akan langsung mendapatkan link unduhan E-Book dan file kontak supplier secara instan.
+        </div>
+      </div>
 
-      <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 group">
-        <summary class="font-bold text-sm text-white cursor-pointer list-none flex justify-between items-center">
+      <!-- Item 2 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button onclick="toggleFaq(2)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
           <span>Apakah harus stok barang dalam jumlah banyak?</span>
-          <span class="text-blue-400 transition-transform group-open:rotate-180">▼</span>
-        </summary>
-        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-          Tidak perlu. Supplier yang kami sediakan melayani pemesanan tanpa minimum order (bisa pesan 1 pcs custom logo client).
-        </p>
-      </details>
+          <span id="faq-icon-2" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-2" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Sama sekali tidak. Supplier yang kami sediakan melayani pemesanan tanpa minimum order (bisa pesan 1 pcs custom logo client).
+        </div>
+      </div>
 
-      <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 group">
-        <summary class="font-bold text-sm text-white cursor-pointer list-none flex justify-between items-center">
-          <span>Saya masih pemula, apakah ada panduannya?</span>
-          <span class="text-blue-400 transition-transform group-open:rotate-180">▼</span>
-        </summary>
-        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+      <!-- Item 3 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button onclick="toggleFaq(3)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
+          <span>Saya masih pemula, apakah ada panduannya dari awal?</span>
+          <span id="faq-icon-3" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-3" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
           Ya! Paket Bundling E-Book dirancang khusus dari dasar, mulai dari pemahaman teknis kartu hingga alur komunikasi lapangan ke calon pembeli.
-        </p>
-      </details>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-    © 2026 Render Smart Card. All rights reserved.
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span>© 2026 Render Smart Card. All rights reserved.</span>
+      <div class="flex gap-4 text-slate-400">
+        <a href="#pricing" class="hover:text-white transition">Privasi</a>
+        <a href="#pricing" class="hover:text-white transition">Syarat & Ketentuan</a>
+      </div>
+    </div>
   </footer>
 
   <!-- STICKY MOBILE CTA BAR -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-3 z-50 flex items-center justify-between gap-3">
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-3 z-50 flex items-center justify-between gap-3 shadow-2xl">
     <div>
       <span class="text-[10px] text-slate-400 block">Paket Lengkap Bundling</span>
-      <span class="text-sm font-extrabold text-emerald-400">Rp 89.000</span>
+      <div class="flex items-center gap-1.5">
+        <span class="text-base font-extrabold text-emerald-400">Rp 89.000</span>
+        <span class="text-[10px] text-slate-500 line-through">Rp 249.000</span>
+      </div>
     </div>
-    <a href="https://lynk.id/rendersmartcard" target="_blank" class="bg-blue-600 text-white font-bold text-xs py-3 px-5 rounded-xl shadow-md">
+    <a href="https://lynk.id/rendersmartcard" target="_blank" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-xs py-3 px-5 rounded-xl shadow-lg shadow-blue-600/30 active:scale-95 transition">
       Beli Sekarang ➔
     </a>
   </div>
+
+  <!-- JAVASCRIPT FOR CALCULATOR, TIMER & ACCORDION -->
+  <script>
+    // 1. Profit Calculator Logic
+    const cardRange = document.getElementById('card-range');
+    const cardCountLabel = document.getElementById('card-count-label');
+    const modalVal = document.getElementById('modal-val');
+    const omsetVal = document.getElementById('omset-val');
+    const profitVal = document.getElementById('profit-val');
+
+    function updateCalculator() {
+      const qty = parseInt(cardRange.value);
+      const modal = qty * 15000;
+      const omset = qty * 85000;
+      const profit = omset - modal;
+
+      cardCountLabel.textContent = `${qty} Pcs`;
+      modalVal.textContent = `Rp ${modal.toLocaleString('id-ID')}`;
+      omsetVal.textContent = `Rp ${omset.toLocaleString('id-ID')}`;
+      profitVal.textContent = `Rp ${profit.toLocaleString('id-ID')}`;
+    }
+
+    if (cardRange) {
+      cardRange.addEventListener('input', updateCalculator);
+      updateCalculator();
+    }
+
+    // 2. Simple FAQ Toggle Logic
+    function toggleFaq(num) {
+      const ans = document.getElementById(`faq-ans-${num}`);
+      const icon = document.getElementById(`faq-icon-${num}`);
+      
+      const isOpen = ans.classList.contains('open');
+
+      // Close all first
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        ans.classList.add('open');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // 3. Countdown Timer Logic
+    let duration = 15 * 60; // 15 Minutes
+    const timerDisplay = document.getElementById('top-timer');
+
+    setInterval(() => {
+      if (duration <= 0) duration = 15 * 60;
+      const minutes = Math.floor(duration / 60);
+      const seconds = duration % 60;
+      if (timerDisplay) {
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+      duration--;
+    }, 1000);
+  </script>
 
 </body>
 </html>

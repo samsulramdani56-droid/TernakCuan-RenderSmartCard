@@ -60,7 +60,7 @@
       opacity: 0;
     }
     .faq-answer.open {
-      max-height: 200px;
+      max-height: 300px;
       opacity: 1;
     }
 
@@ -422,7 +422,7 @@
   <!-- FAQ SECTION ACCORDION -->
   <section class="py-16 px-4 max-w-3xl mx-auto">
     <div class="text-center mb-10">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Pertanyaan Sering Diajukan (FAQ)</h2>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Pertanyaan yang Sering Ditanyain</h2>
       <p class="text-slate-400 text-xs">Jawaban lengkap seputar akses digital Render Smart Card.</p>
     </div>
 
@@ -430,33 +430,110 @@
       <!-- Item 1 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
         <button type="button" onclick="toggleFaq(1)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <span>Bagaimana cara saya menerima materi setelah pembayaran?</span>
+          <span>Aku butuh followers atau modal gede nggak?</span>
           <span id="faq-icon-1" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
         <div id="faq-ans-1" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
-          Pembayaran diproses otomatis melalui sistem Lynk.id. Setelah checkout selesai, kamu akan langsung mendapatkan link unduhan E-Book dan file kontak supplier secara instan.
+          Nggak sama sekali. Seluruh sistem ini fokus ke closing langsung ke pemilik bisnis lokal — jalan kaki masuk toko atau lewat DM/telepon — bukan jualan online yang butuh audiens atau followers.
         </div>
       </div>
 
       <!-- Item 2 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
         <button type="button" onclick="toggleFaq(2)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <span>Apakah harus stok barang dalam jumlah banyak?</span>
+          <span>Berapa modal awal yang aku butuhin?</span>
           <span id="faq-icon-2" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
         <div id="faq-ans-2" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
-          Sama sekali tidak. Supplier yang kami sediakan melayani pemesanan tanpa minimum order (bisa pesan 1 pcs custom logo client).
+          Mulai dari Rp65.000 buat akses supplier. Satu kartu NFC harganya cuma Rp15.000, dan hasil closing per kartu ke bisnis bisa Rp50.000–165.000 atau lebih.
         </div>
       </div>
 
       <!-- Item 3 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
         <button type="button" onclick="toggleFaq(3)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <span>Saya masih pemula, apakah ada panduannya dari awal?</span>
+          <span>Berapa banyak cuan yang bisa aku dapat sebenarnya?</span>
           <span id="faq-icon-3" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
         <div id="faq-ans-3" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
-          Ya! Paket Bundling E-Book dirancang khusus dari dasar, mulai dari pemahaman teknis kartu hingga alur komunikasi lapangan ke calon pembeli.
+          Tergantung jenis bisnis yang kamu deketin. Ke warung/toko kecil biasanya closing di kisaran Rp50.000–75.000 per kartu. Ke bisnis yang lebih besar (resto rame, klinik, bisnis yang udah punya banyak cabang) closing-nya bisa Rp100.000–165.000 karena value review Google buat mereka jauh lebih besar. Semua script & cara nego harga sesuai jenis bisnis ada di panduan.
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(4)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Beneran bisa cuan sampai 10x lipat dari modal?</span>
+          <span id="faq-icon-4" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-4" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Bisa, tapi bukan otomatis di setiap kartu. Modal kartu Rp15.000 — kalau kamu closing ke bisnis yang lebih besar di kisaran Rp150.000, itu udah 10x lipat dari modal. Angka pastinya tergantung ke bisnis apa kamu jual, seberapa sering kamu closing, dan skill nego kamu. Makin gede & makin butuh review bisnisnya, makin tinggi juga harga yang bisa kamu tawarkan.
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(5)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Bedanya dua paket ini apa?</span>
+          <span id="faq-icon-5" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-5" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Akses Supplier cuma berisi kontak supplier kartu — cara closingnya kamu cari sendiri. Panduan Lengkap A–Z udah termasuk akses supplier plus semua script, strategi deketin bisnis, dan cara scale, jadi paling cocok buat yang baru mulai.
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(6)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Kapan aku dapat akses setelah bayar?</span>
+          <span id="faq-icon-6" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-6" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Instan. Begitu pembayaran berhasil, link dan materinya langsung otomatis terkirim lewat sistem checkout.
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(7)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Ini bisa dijalanin di luar kota besar juga?</span>
+          <span id="faq-icon-7" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-7" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Bisa banget, di kota mana aja. Bisnis lokal yang butuh review Google ada di mana-mana — dari kota besar sampai kabupaten.
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(8)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Kartu NFC/QR-nya cara kerjanya gimana?</span>
+          <span id="faq-icon-8" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-8" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Tinggal tap HP ke kartu (kalau HP-nya support NFC) atau scan QR yang ada di kartu. Pelanggan langsung diarahkan ke halaman review Google bisnis itu, tanpa perlu cari-cari sendiri. Prosesnya kurang dari 5 detik.
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(9)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Metode pembayarannya apa aja?</span>
+          <span id="faq-icon-9" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-9" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Checkout lewat Lynk.id, jadi kamu bisa bayar pakai transfer bank, e-wallet (OVO, DANA, GoPay, ShopeePay), QRIS, sampai kartu debit/kredit.
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(10)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span>Kalau ada kendala pas aktivasi atau butuh bantuan, gimana caranya?</span>
+          <span id="faq-icon-10" class="text-blue-400 transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-ans-10" class="faq-answer px-4 pb-4 text-xs text-slate-400 leading-relaxed">
+          Chat langsung admin kami di WhatsApp lewat halaman Kontak, biasanya dibalas dalam hitungan menit di jam kerja (Senin–Jumat, 09.00–18.00 WIB).
         </div>
       </div>
     </div>

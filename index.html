@@ -6,6 +6,19 @@
   <title>Ternak Cuan - Render Smart Card</title>
   <meta name="description" content="Bongkar rahasia bisnis kartu Google Review NFC & QR Code. Akses supplier tangan pertama mulai Rp15.000/pcs tanpa minimum order beserta panduan A-Z sampai deal.">
   
+  <!-- DOMAIN CANONICAL & HOSTNAME PROTECTION -->
+  <link rel="canonical" href="https://ternakcuanid.vercel.app">
+  <script>
+    // Enforce Domain Access Protection (Redirect if accessed outside host domain)
+    (function() {
+      var targetHost = "ternakcuanid.vercel.app";
+      var currentHost = window.location.hostname;
+      if (currentHost && currentHost !== targetHost && currentHost !== "localhost" && currentHost !== "127.0.0.1") {
+        window.location.replace("https://" + targetHost + window.location.pathname + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+
   <!-- ROBOTS NOINDEX NOFOLLOW (PREVENT SEARCH ENGINE INDEXING) -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
@@ -21,6 +34,7 @@
   <meta property="og:title" content="Rahasia Bisnis Kartu Google Review NFC - Margin 400%">
   <meta property="og:description" content="Dapatkan Akses supplier tangan pertama Rp15.000/pcs + E-Book Panduan Pitching ke UMKM lokal.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ternakcuanid.vercel.app">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>

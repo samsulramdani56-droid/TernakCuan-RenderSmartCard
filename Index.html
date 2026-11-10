@@ -6,6 +6,12 @@
   <title>Panduan Bisnis & Akses Supplier Kartu Google Review - Render Smart Card</title>
   <meta name="description" content="Bongkar rahasia bisnis kartu Google Review NFC & QR Code. Akses supplier tangan pertama mulai Rp15.000/pcs tanpa minimum order beserta panduan A-Z sampai deal.">
   
+  <!-- SECURITY HEADERS (META ENFORCEMENT) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+
   <!-- Open Graph / SEO -->
   <meta property="og:title" content="Rahasia Bisnis Kartu Google Review NFC - Margin 400%">
   <meta property="og:description" content="Dapatkan kontak supplier tangan pertama Rp15.000/pcs + panduan pitching ke UMKM lokal.">
@@ -14,6 +20,8 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
@@ -374,7 +382,8 @@
             </ul>
           </div>
 
-          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3.5 px-4 rounded-xl text-center text-xs transition-all">
+          <!-- SECURED EXTERNAL LINK -->
+          <a href="https://lynk.id/rendersmartcard" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3.5 px-4 rounded-xl text-center text-xs transition-all">
             Pilih Akses Supplier
           </a>
         </div>
@@ -421,7 +430,8 @@
             </ul>
           </div>
 
-          <a href="https://lynk.id/rendersmartcard" target="_blank" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-4 px-4 rounded-xl text-center text-sm shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+          <!-- SECURED EXTERNAL LINK -->
+          <a href="https://lynk.id/rendersmartcard" target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-4 px-4 rounded-xl text-center text-sm shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
             <span>Dapatkan Paket Lengkap</span>
             <span>➔</span>
           </a>
@@ -441,7 +451,7 @@
     <div class="space-y-3">
       <!-- Item 1 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
-        <button onclick="toggleFaq(1)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
+        <button type="button" onclick="toggleFaq(1)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
           <span>Bagaimana cara saya menerima materi setelah pembayaran?</span>
           <span id="faq-icon-1" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
@@ -452,7 +462,7 @@
 
       <!-- Item 2 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
-        <button onclick="toggleFaq(2)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
+        <button type="button" onclick="toggleFaq(2)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
           <span>Apakah harus stok barang dalam jumlah banyak?</span>
           <span id="faq-icon-2" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
@@ -463,7 +473,7 @@
 
       <!-- Item 3 -->
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
-        <button onclick="toggleFaq(3)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none">
+        <button type="button" onclick="toggleFaq(3)" class="w-full font-bold text-sm text-white p-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500">
           <span>Saya masih pemula, apakah ada panduannya dari awal?</span>
           <span id="faq-icon-3" class="text-blue-400 transition-transform duration-300">▼</span>
         </button>
@@ -485,9 +495,9 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR CALCULATOR & ACCORDION -->
+  <!-- JAVASCRIPT FOR CALCULATOR & ACCORDION (WITH SANITIZATION) -->
   <script>
-    // 1. Profit Calculator Logic
+    // 1. Profit Calculator Logic with Input Validation
     const cardRange = document.getElementById('card-range');
     const cardCountLabel = document.getElementById('card-count-label');
     const modalVal = document.getElementById('modal-val');
@@ -495,7 +505,13 @@
     const profitVal = document.getElementById('profit-val');
 
     function updateCalculator() {
-      const qty = parseInt(cardRange.value);
+      if (!cardRange) return;
+      
+      // Strict Numerical Validation & Bounds Check
+      let qty = parseInt(cardRange.value, 10);
+      if (isNaN(qty) || qty < 5) qty = 5;
+      if (qty > 200) qty = 200;
+
       const modal = qty * 15000;
       const omset = qty * 85000;
       const profit = omset - modal;
@@ -511,14 +527,19 @@
       updateCalculator();
     }
 
-    // 2. Simple FAQ Toggle Logic
+    // 2. Safe FAQ Toggle Logic
     function toggleFaq(num) {
-      const ans = document.getElementById(`faq-ans-${num}`);
-      const icon = document.getElementById(`faq-icon-${num}`);
+      const targetNum = parseInt(num, 10);
+      if (isNaN(targetNum)) return;
+
+      const ans = document.getElementById(`faq-ans-${targetNum}`);
+      const icon = document.getElementById(`faq-icon-${targetNum}`);
       
+      if (!ans || !icon) return;
+
       const isOpen = ans.classList.contains('open');
 
-      // Close all first
+      // Reset state safely
       document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
       document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
 

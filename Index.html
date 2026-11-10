@@ -52,13 +52,7 @@
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white pb-24 md:pb-0 bg-mesh">
-
-  <!-- TOP ANNOUNCEMENT BAR WITH TIMER -->
-  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 text-white py-2 px-4 text-center text-xs sm:text-sm font-semibold tracking-wide shadow-lg sticky top-0 z-50 flex items-center justify-center gap-2">
-    <span>🔥 PROMO SPESIAL: Diskon 70% + Akses Supplier Tangan Pertama berakhir dalam</span>
-    <span id="top-timer" class="font-mono font-bold bg-black/30 px-2 py-0.5 rounded text-amber-300">14:59</span>
-  </div>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white bg-mesh">
 
   <!-- NAVIGATION HEADER -->
   <header class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between border-b border-slate-800/60">
@@ -491,21 +485,7 @@
     </div>
   </footer>
 
-  <!-- STICKY MOBILE CTA BAR -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-3 z-50 flex items-center justify-between gap-3 shadow-2xl">
-    <div>
-      <span class="text-[10px] text-slate-400 block">Paket Lengkap Bundling</span>
-      <div class="flex items-center gap-1.5">
-        <span class="text-base font-extrabold text-emerald-400">Rp 89.000</span>
-        <span class="text-[10px] text-slate-500 line-through">Rp 249.000</span>
-      </div>
-    </div>
-    <a href="https://lynk.id/rendersmartcard" target="_blank" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-xs py-3 px-5 rounded-xl shadow-lg shadow-blue-600/30 active:scale-95 transition">
-      Beli Sekarang ➔
-    </a>
-  </div>
-
-  <!-- JAVASCRIPT FOR CALCULATOR, TIMER & ACCORDION -->
+  <!-- JAVASCRIPT FOR CALCULATOR & ACCORDION -->
   <script>
     // 1. Profit Calculator Logic
     const cardRange = document.getElementById('card-range');
@@ -547,20 +527,6 @@
         icon.style.transform = 'rotate(180deg)';
       }
     }
-
-    // 3. Countdown Timer Logic
-    let duration = 15 * 60; // 15 Minutes
-    const timerDisplay = document.getElementById('top-timer');
-
-    setInterval(() => {
-      if (duration <= 0) duration = 15 * 60;
-      const minutes = Math.floor(duration / 60);
-      const seconds = duration % 60;
-      if (timerDisplay) {
-        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      }
-      duration--;
-    }, 1000);
   </script>
 
 </body>

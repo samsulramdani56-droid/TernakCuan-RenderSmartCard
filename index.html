@@ -424,7 +424,7 @@
                 <span class="text-slate-500 line-through text-sm font-semibold">Rp249.000</span>
               </div>
               <div class="inline-flex items-center gap-1.5 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs px-3 py-1 rounded-xl font-semibold mb-2">
-                <span>⏱ Berakhir dalam 59.59</span>
+                <span id="countdown-timer">⏱ Berakhir dalam 59:59</span>
               </div>
               <p class="text-xs text-slate-400 font-medium mb-6">Sekali bayar · Akses instan · Berlaku selamanya</p>
             </div>
@@ -580,7 +580,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR CALCULATOR, ACCORDION & 3D CARD INTERACTION -->
+  <!-- JAVASCRIPT FOR CALCULATOR, ACCORDION, 3D CARD INTERACTION & COUNTDOWN TIMER -->
   <script>
     // 1. Profit Calculator Logic with Manual Price & Quantity Control
     const cardRange = document.getElementById('card-range');
@@ -665,6 +665,33 @@
         card3D.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
       });
     }
+
+    // 4. Dynamic Live Countdown Timer Logic (Starts from 59:59)
+    (function startCountdown() {
+      const timerElement = document.getElementById('countdown-timer');
+      if (!timerElement) return;
+
+      let totalSeconds = 59 * 60 + 59; // 59 menit 59 detik
+
+      function updateTimerDisplay() {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(seconds).padStart(2, '0');
+
+        timerElement.textContent = `⏱ Berakhir dalam ${formattedMinutes}:${formattedSeconds}`;
+
+        if (totalSeconds > 0) {
+          totalSeconds--;
+        } else {
+          totalSeconds = 59 * 60 + 59; // Reset otomatis saat mencapai 00:00
+        }
+      }
+
+      updateTimerDisplay();
+      setInterval(updateTimerDisplay, 1000);
+    })();
   </script>
 
 </body>

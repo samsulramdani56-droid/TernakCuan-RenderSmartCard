@@ -569,16 +569,146 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <span>© 2026 Render Smart Card. All rights reserved.</span>
-      <div class="flex gap-4 text-slate-400">
-        <a href="#pricing" class="hover:text-white transition">Privasi</a>
-        <a href="#pricing" class="hover:text-white transition">Syarat & Ketentuan</a>
+  <!-- FOOTER (UPDATED WITH JELAJAHI & KEBIJAKAN) -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 pt-14 pb-10 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-slate-800/80">
+        
+        <!-- Brand & Tagline -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-black shadow-lg shadow-blue-500/30">
+              R
+            </div>
+            <div>
+              <span class="font-extrabold text-base tracking-tight text-white block leading-none">TernakCuan.id</span>
+              <span class="text-[10px] text-slate-400 font-medium">by Render Smart Card</span>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-xs">
+            Peluang usaha kartu NFC &amp; QR Google Review untuk kamu yang ingin mulai bisnis dengan modal kecil.
+          </p>
+        </div>
+
+        <!-- Column 1: Jelajahi -->
+        <div>
+          <h4 class="font-bold text-white text-sm mb-4">Jelajahi</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="#pricing" class="hover:text-white transition">Paket</a></li>
+            <li><a href="#cara-kerja" class="hover:text-white transition">Cara Kerja</a></li>
+            <li><a href="#kalkulator" class="hover:text-white transition">Kalkulator Profit</a></li>
+            <li><a href="#pricing" class="hover:text-white transition">Gabung Mitra</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Kebijakan -->
+        <div>
+          <h4 class="font-bold text-white text-sm mb-4">Kebijakan</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li>
+              <button type="button" onclick="openPolicyModal('privasi')" class="hover:text-white transition text-left">
+                Kebijakan Privasi
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="openPolicyModal('syarat')" class="hover:text-white transition text-left">
+                Syarat &amp; Ketentuan
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="openPolicyModal('refund')" class="hover:text-white transition text-left">
+                Kebijakan Refund
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Disclaimer -->
+      <div class="pt-8 space-y-2 text-xs text-slate-500 leading-relaxed">
+        <p>© 2026 TernakCuan.id. Semua hak dilindungi.</p>
+        <p>TernakCuan.id tidak berafiliasi dengan Google. Google adalah merek dagang Google LLC.</p>
       </div>
     </div>
   </footer>
+
+  <!-- MODAL POPUP KEBIJAKAN (KEBIJAKAN PRIVASI, SYARAT & KETENTUAN, KEBIJAKAN REFUND) -->
+  <div id="policy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4" onclick="closePolicyModalOnBackdrop(event)">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/95">
+        <h3 id="policy-modal-title" class="text-base sm:text-lg font-extrabold text-white">Kebijakan Privasi — Ternak Cuan</h3>
+        <button type="button" onclick="closePolicyModal()" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div id="policy-modal-body" class="p-6 overflow-y-auto text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4">
+        <!-- Content injected dynamically by JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3.5 border-t border-slate-800 bg-slate-900/95 flex justify-end">
+        <button type="button" onclick="closePolicyModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2 rounded-xl text-xs transition">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIDDEN POLICY TEMPLATES -->
+  <div id="policy-content-privasi" class="hidden">
+    <p class="text-[11px] text-slate-400">Terakhir diperbarui: November 2026</p>
+    <p>Selamat datang di <strong class="text-white">Ternak Cuan</strong> (bagian dari ekosistem <strong class="text-white">Render Smart Card</strong>). Kami sangat menghargai privasi Anda dan berkomitmen untuk melindungi setiap informasi pribadi yang Anda berikan saat mengakses website, membeli produk digital maupun fisik, serta bergabung dalam program kemitraan atau reseller kami.</p>
+    <p>Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi data Anda.</p>
+
+    <h4 class="font-bold text-white text-sm pt-2">1. Informasi yang Kami Kumpulkan</h4>
+    <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+      <li><strong class="text-white">Data Identitas &amp; Kontak:</strong> Nama lengkap, alamat email, dan nomor WhatsApp aktif yang Anda masukkan saat melakukan pemesanan, pendaftaran mitra/reseller, atau menghubungi layanan pelanggan kami.</li>
+      <li><strong class="text-white">Data Pengiriman (Produk Fisik):</strong> Alamat lengkap (jalan, kelurahan, kecamatan, kota/kabupaten, kode pos) yang diperlukan untuk memproses pengiriman unit fisik Kartu Google Review NFC &amp; QR Code.</li>
+      <li><strong class="text-white">Data Aktivasi Produk:</strong> Nama usaha/toko, tautan (<em>link</em>) Google Maps, atau kode <em>Place ID</em> yang Anda kirimkan untuk keperluan aktivasi dan konfigurasi kartu pintar.</li>
+      <li><strong class="text-white">Data Transaksi:</strong> Riwayat pesanan, bukti pembayaran, dan status transaksi yang diproses melalui mitra sistem pembayaran maupun platform distribusi kami (seperti Lynk.id). <em>Catatan: Kami tidak menyimpan informasi sensitif seperti kata sandi perbankan atau nomor kartu kredit Anda.</em></li>
+    </ul>
+
+    <h4 class="font-bold text-white text-sm pt-2">2. Bagaimana Kami Menggunakan Informasi Anda</h4>
+    <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+      <li><strong class="text-white">Pemenuhan Pesanan:</strong> Mengirimkan akses produk digital (seperti E-Book Panduan Bisnis, materi promosi, akses grup eksklusif) serta memproses pengemasan dan pengiriman produk fisik.</li>
+      <li><strong class="text-white">Konfigurasi Teknis:</strong> Menghubungkan chip NFC dan QR Code pada kartu ke halaman ulasan Google Maps bisnis yang Anda daftarkan.</li>
+      <li><strong class="text-white">Layanan Pelanggan &amp; Dukungan Teknis:</strong> Membantu kendala aktivasi kartu, pembaruan tautan (<em>re-link</em>), serta menjawab pertanyaan seputar kemitraan.</li>
+      <li><strong class="text-white">Informasi Pembaruan:</strong> Mengirimkan pemberitahuan penting terkait pembaruan sistem, stok produk reseller, atau panduan bisnis terbaru melalui WhatsApp atau email.</li>
+    </ul>
+
+    <h4 class="font-bold text-white text-sm pt-2">3. Perlindungan &amp; Pembagian Data kepada Pihak Ketiga</h4>
+    <p><strong class="text-white">Ternak Cuan</strong> tidak pernah menjual, menyewakan, atau memperdagangkan data pribadi Anda kepada pihak mana pun untuk tujuan pemasaran pihak ketiga. Data Anda hanya dibagikan secara terbatas kepada mitra operasional tepercaya:</p>
+    <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+      <li><strong class="text-white">Platform Checkout &amp; Payment Gateway</strong> (seperti Lynk.id dan penyedia layanan pembayaran resmi) untuk memverifikasi transaksi secara aman.</li>
+      <li><strong class="text-white">Jasa Ekspedisi / Kurir Pengiriman</strong> (seperti JNE, J&amp;T, SiCepat, dan ekspedisi terkait) khusus untuk pengiriman paket fisik ke alamat Anda.</li>
+    </ul>
+
+    <h4 class="font-bold text-white text-sm pt-2">4. Tautan Pihak Ketiga &amp; Penafian Merek Dagang</h4>
+    <p>Layanan kartu pintar kami berfungsi untuk mengarahkan pengguna ke halaman ulasan pada layanan <strong class="text-white">Google Maps / Google Business Profile</strong>. Setelah Anda atau pelanggan Anda dialihkan ke platform Google, penggunaan data tunduk sepenuhnya pada Kebijakan Privasi Google.</p>
+    <p><strong class="text-white">Penafian (Disclaimer):</strong> Ternak Cuan maupun Render Smart Card adalah penyedia solusi bisnis independen dan tidak berafiliasi, disponsori, atau didukung secara resmi oleh Google LLC. Google dan Google Maps adalah merek dagang terdaftar milik Google LLC.</p>
+
+    <h4 class="font-bold text-white text-sm pt-2">5. Hak Anda atas Data Pribadi</h4>
+    <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+      <li>Meminta pembaruan atau perubahan data tautan (<em>link</em> Google Maps / nama bisnis) yang tertanam pada sistem kartu Anda.</li>
+      <li>Meminta koreksi atas informasi kontak atau alamat pengiriman sebelum paket diproses.</li>
+      <li>Meminta penghapusan data pribadi Anda dari daftar kontak komunikasi kami kapan saja.</li>
+    </ul>
+
+    <h4 class="font-bold text-white text-sm pt-2">6. Perubahan Kebijakan Privasi</h4>
+    <p>Kami dapat memperbarui isi Kebijakan Privasi ini sewaktu-waktu menyesuaikan perkembangan fitur layanan dan regulasi yang berlaku. Setiap perubahan akan langsung ditampilkan pada halaman ini dengan tanggal pembaruan terbaru di bagian atas.</p>
+  </div>
+
+  <div id="policy-content-syarat" class="hidden">
+    <p class="text-slate-300">Halaman <strong class="text-white">Syarat &amp; Ketentuan</strong> Ternak Cuan sedang dalam tahap penyusunan versi terbaru.</p>
+  </div>
+
+  <div id="policy-content-refund" class="hidden">
+    <p class="text-slate-300">Halaman <strong class="text-white">Kebijakan Refund</strong> Ternak Cuan sedang dalam tahap penyusunan versi terbaru.</p>
+  </div>
 
   <!-- JAVASCRIPT FOR CALCULATOR, ACCORDION, 3D CARD INTERACTION & COUNTDOWN TIMER -->
   <script>
@@ -692,6 +822,50 @@
       updateTimerDisplay();
       setInterval(updateTimerDisplay, 1000);
     })();
+
+    // 5. Policy Modal Logic (Kebijakan Privasi, Syarat & Ketentuan, Kebijakan Refund)
+    function openPolicyModal(type) {
+      const modal = document.getElementById('policy-modal');
+      const titleEl = document.getElementById('policy-modal-title');
+      const bodyEl = document.getElementById('policy-modal-body');
+      const sourceEl = document.getElementById(`policy-content-${type}`);
+
+      if (!modal || !titleEl || !bodyEl || !sourceEl) return;
+
+      const titles = {
+        privasi: 'Kebijakan Privasi — Ternak Cuan',
+        syarat: 'Syarat & Ketentuan — Ternak Cuan',
+        refund: 'Kebijakan Refund — Ternak Cuan'
+      };
+
+      titleEl.textContent = titles[type] || 'Kebijakan — Ternak Cuan';
+      bodyEl.innerHTML = sourceEl.innerHTML;
+      bodyEl.scrollTop = 0;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePolicyModal() {
+      const modal = document.getElementById('policy-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function closePolicyModalOnBackdrop(event) {
+      if (event.target && event.target.id === 'policy-modal') {
+        closePolicyModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closePolicyModal();
+      }
+    });
   </script>
 
 </body>
